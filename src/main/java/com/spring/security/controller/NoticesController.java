@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class NoticesController {
 
-    @GetMapping("/support")
+    @GetMapping("/notice")
     public String getAccountDetails(){
         return "Welcome to Notice Section!";
     }
