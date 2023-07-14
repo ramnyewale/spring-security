@@ -1,7 +1,9 @@
 package com.spring.security.repository;
 
-import com.spring.security.model.Student;
+import com.spring.security.entity.Student;
+import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
 import org.springframework.stereotype.Repository;
@@ -24,4 +26,9 @@ public interface StudentRepository extends JpaRepository<Student, Long> {
     // Native Named Parameter Query
     @Query(value = "select * from student_tbl std where std.email_address= :emailId", nativeQuery = true)
     Student getStudentByEmailNativeNamedParamQuery(@Param("emailId") String emailId);
+
+    @Transactional
+    @Modifying
+    @Query(nativeQuery = true, value = "Update student_tbl set first_name=?1 where email_address=?2")
+    int updateStudentNameByEmailId(String name, String email);
 }

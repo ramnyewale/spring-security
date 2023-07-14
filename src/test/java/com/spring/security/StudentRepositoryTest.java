@@ -1,7 +1,7 @@
 package com.spring.security;
 
-import com.spring.security.model.Guardian;
-import com.spring.security.model.Student;
+import com.spring.security.entity.Guardian;
+import com.spring.security.entity.Student;
 import com.spring.security.repository.StudentRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -56,6 +56,11 @@ public class StudentRepositoryTest {
     @Test
     public void getStudentByEmailNativeNamedParameterQuery() {
         System.out.println("Find Student By Email: " + studentRepository.getStudentByEmailNativeNamedParamQuery(MY_EMAIL));
+    }
+
+    @Test
+    public void updateStudentNameByEmail(){
+        System.out.println("Student updated: "+ studentRepository.updateStudentNameByEmailId("Madhu","priya.yewale@vedu-enterprises.com"));
     }
 
 }

@@ -1,6 +1,5 @@
-package com.spring.security.model;
+package com.spring.security.entity;
 
-import jakarta.annotation.Nullable;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;

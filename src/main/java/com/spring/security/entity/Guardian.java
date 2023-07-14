@@ -1,4 +1,4 @@
-package com.spring.security.model;
+package com.spring.security.entity;
 
 import jakarta.persistence.AttributeOverride;
 import jakarta.persistence.AttributeOverrides;
